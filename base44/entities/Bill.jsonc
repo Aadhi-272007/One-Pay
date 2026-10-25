@@ -1,0 +1,99 @@
+{
+  "title": "Bill",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "merchant": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "enum": [
+        "one-time",
+        "weekly",
+        "monthly",
+        "quarterly",
+        "annual"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "completed"
+      ]
+    },
+    "autopay": {
+      "type": "boolean"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "upi_id": {
+      "type": "string"
+    },
+    "account_details": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "attachment_uri": {
+      "type": "string"
+    },
+    "snoozed_until": {
+      "type": "string"
+    },
+    "dismissed_cycle": {
+      "type": "string"
+    },
+    "last_paid_date": {
+      "type": "string"
+    },
+    "gmail_message_id": {
+      "type": "string"
+    },
+    "calendar_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "synced",
+        "error"
+      ]
+    },
+    "calendar_error": {
+      "type": "string"
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "Bill",
+  "required": []
+}

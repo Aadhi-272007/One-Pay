@@ -1,0 +1,72 @@
+{
+  "title": "GmailSuggestion",
+  "type": "object",
+  "properties": {
+    "gmail_message_id": {
+      "type": "string"
+    },
+    "thread_id": {
+      "type": "string"
+    },
+    "merchant": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "invoice_date": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "bill",
+        "subscription",
+        "expense"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "dismissed"
+      ]
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "GmailSuggestion",
+  "required": []
+}

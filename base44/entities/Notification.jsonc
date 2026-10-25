@@ -1,0 +1,50 @@
+{
+  "title": "Notification",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "bill_detected",
+        "renewal",
+        "overdue",
+        "due_soon",
+        "sync",
+        "general"
+      ]
+    },
+    "read": {
+      "type": "boolean"
+    },
+    "related_type": {
+      "type": "string"
+    },
+    "related_id": {
+      "type": "string"
+    },
+    "email_sent": {
+      "type": "boolean"
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "Notification"
+}

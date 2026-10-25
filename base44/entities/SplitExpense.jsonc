@@ -1,0 +1,63 @@
+{
+  "title": "SplitExpense",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "merchant": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "share": {
+            "type": "number"
+          },
+          "settled": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "SplitExpense",
+  "required": [
+    "title",
+    "amount"
+  ]
+}

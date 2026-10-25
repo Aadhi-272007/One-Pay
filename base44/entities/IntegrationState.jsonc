@@ -1,0 +1,48 @@
+{
+  "title": "IntegrationState",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "gmail",
+        "calendar"
+      ]
+    },
+    "connected": {
+      "type": "boolean"
+    },
+    "last_sync_at": {
+      "type": "string"
+    },
+    "last_error": {
+      "type": "string"
+    },
+    "cursor": {
+      "type": "string"
+    },
+    "last_result": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "IntegrationState",
+  "required": []
+}

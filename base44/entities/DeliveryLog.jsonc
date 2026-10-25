@@ -1,0 +1,50 @@
+{
+  "title": "DeliveryLog",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "notification",
+        "email"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "sent",
+        "pending",
+        "failed"
+      ]
+    },
+    "detail": {
+      "type": "string"
+    },
+    "sent_at": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  },
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  },
+  "name": "DeliveryLog",
+  "required": []
+}
